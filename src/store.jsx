@@ -7,3 +7,5 @@ const useStore = create((set) => ({
       reservations: [...state.reservations, { hotel, dates }],
     })),
 }));
+
+export default useStore;

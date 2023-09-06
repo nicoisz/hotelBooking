@@ -1,0 +1,34 @@
+{
+  "hotels": [
+    {
+      "id": 1,
+      "name": "Hotel Nico",
+      "description": "Hotel de Lujo",
+      "image": "/img/hotel1.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Hotel Bella Vista",
+      "description": "Hotel frente al mar",
+      "image": "/img/hotel2.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Hotel Montaña",
+      "description": "Refugio en las montañas",
+      "image": "/img/hotel3.jpeg"
+    },
+    {
+      "id": 4,
+      "name": "Hotel Elegante",
+      "description": "Elegancia y comodidad",
+      "image": "/img/hotel4.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Hotel Oasis",
+      "description": "Un oasis en el desierto",
+      "image": "/img/hotel5.jpeg"
+    }
+  ]
+}

@@ -63,3 +63,5 @@ function HotelList() {
     </>
   );
 }
+
+export default HotelList;

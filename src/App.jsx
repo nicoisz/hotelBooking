@@ -7,7 +7,9 @@ const client = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={client}>
-      <HotelList />
+      <Switch>
+        <Route path="/" component={HotelList} />
+      </Switch>
     </QueryClientProvider>
   );
 }

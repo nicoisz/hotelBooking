@@ -1,14 +1,13 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Typography,
-  Stack,
-} from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
-import { useQueries } from "@tanstack/react-query";
+
+import Stack from "@mui/material/Stack";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 const fetchHotels = async () => {
   const res = await fetch("http://localhost:3001/hotels");
@@ -23,7 +22,7 @@ function HotelList() {
     data: hotels,
     isLoading,
     error,
-  } = useQueries({ queryKey: ["hotels"], queryFn: fetchHotels });
+  } = useQuery({ queryKey: ["hotels"], queryFn: fetchHotels });
 
   if (isLoading) {
     return <div> Loading...</div>;
@@ -38,20 +37,22 @@ function HotelList() {
       <Typography variant="h4" component="h2">
         Booking App
       </Typography>
-      <Stack space={2}>
+      <Stack spacing={2}>
         {hotels.map((hotel) => (
-          <Link key={hotel.id} href={`/hotel/$hotel.id`}>
+          <Link key={hotel.id} href={`/hotel/${hotel.id}`}>
             <Card sx={{ maxWidth: 345, background: "#e8e8e8" }}>
               <CardMedia
-                sx={{ height: 40 }}
-                image={hotel.image}
+                sx={{ height: 140 }}
+                image={hotel.img}
                 title={hotel.title}
               ></CardMedia>
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                   {hotel.name}
                 </Typography>
-                <Typography>{hotel.description}</Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {hotel.description}
+                </Typography>
               </CardContent>
               <CardActions>
                 <Button size="small">see details</Button>

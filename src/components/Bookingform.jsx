@@ -18,16 +18,27 @@ function BookingForm({ hotel }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onsubmit)}>
-      <Input type="data" {...register("startDate", { required: true })}></Input>
-      {errors.startDate && (
-        <Typography style={{ color: "red" }}>Start Date is required</Typography>
-      )}
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <h4>
+        Start Date :
+        <Input
+          type="date"
+          {...register("startDate", { required: true })}
+        ></Input>
+        {errors.startDate && (
+          <Typography style={{ color: "red" }}>
+            Start Date is required
+          </Typography>
+        )}
+      </h4>
+      <h4>
+        End Date :
+        <Input type="date" {...register("endDate", { required: true })}></Input>
+        {errors.endDate && (
+          <Typography style={{ color: "red" }}>End Date is required</Typography>
+        )}
+      </h4>
       <br />
-      <Input type="data" {...register("endDate", { required: true })}></Input>
-      {errors.endDate && (
-        <Typography style={{ color: "red" }}>End Date is required</Typography>
-      )}
       <br />
       <Button variant="contained" type="submit">
         Make Reservation
